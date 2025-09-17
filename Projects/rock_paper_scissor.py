@@ -1,13 +1,16 @@
 import random
 
-emojis = {'r': '🪨', 'p': '📃', 's': '✂️'}
+ROCK = 'r'
+PAPER = 'P'
+SCISSOR = 's'
+emojis = {ROCK: '🪨', PAPER: '📃', SCISSOR: '✂️'}
 user_win = 0
 com_win = 0
 tie = 0
 
 while True:
     user_choice = input("Rock, paper or scissor? (r/p/s): ").lower()
-    choices = ('r', 'p', 's')
+    choices = tuple(emojis.keys())
 
     if user_choice not in choices:
         print("Invalid choice!")
@@ -22,9 +25,9 @@ while True:
         print("Tie!")
         tie += 1
     elif (
-        (user_choice == 'r' and computer_choice == 's') or
-        (user_choice == 'p' and computer_choice == 'r') or
-        (user_choice == 's' and computer_choice == 'p') ):
+        (user_choice == ROCK and computer_choice == SCISSOR) or
+        (user_choice == PAPER and computer_choice == ROCK) or
+        (user_choice == SCISSOR and computer_choice == PAPER) ):
         print("You Win!")
         user_win += 1
     else:
