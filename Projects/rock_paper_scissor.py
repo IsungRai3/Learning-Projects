@@ -1,7 +1,7 @@
 import random
 
 ROCK = 'r'
-PAPER = 'P'
+PAPER = 'p'
 SCISSOR = 's'
 emojis = {ROCK: '🪨', PAPER: '📃', SCISSOR: '✂️'}
 user_win = 0
